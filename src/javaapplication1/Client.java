@@ -33,29 +33,10 @@ public class Client  {
     JButton leki = new JButton("Wprowadz lek");
     JButton transakcje = new JButton("Wprowadz transakcje");
 
-    recepty.addActionListener(new ActionListener() {
-        @Override
-      public void actionPerformed(ActionEvent e) {
-             
-      }
-    });
-    
-    leki.addActionListener(new ActionListener() {
-        @Override
-      public void actionPerformed(ActionEvent e) {
-             
-      }
-    });
-     transakcje.addActionListener(new ActionListener() {
-        @Override
-      public void actionPerformed(ActionEvent e) {
-             
-      }
-    });
     
     
     
-    JFrame f = new JFrame("SQL client");
+    final JFrame f = new JFrame("SQL client");
     f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     JPanel p = new JPanel();
     p.add(recepty);
@@ -64,6 +45,29 @@ public class Client  {
     f.getContentPane().add(p, BorderLayout.SOUTH);
     f.pack();
     f.setVisible(true);
+    
+    recepty.addActionListener(new ActionListener() {
+        @Override
+      public void actionPerformed(ActionEvent e) {
+            f.setVisible(false); //you can't see me!
+            f.dispose(); //Destroy the JFrame object
+      }
+    });
+    
+    leki.addActionListener(new ActionListener() {
+        @Override
+      public void actionPerformed(ActionEvent e) {
+            f.setVisible(false); //you can't see me!
+            f.dispose(); //Destroy the JFrame object 
+      }
+    });
+     transakcje.addActionListener(new ActionListener() {
+        @Override
+      public void actionPerformed(ActionEvent e) {
+            f.setVisible(false); //you can't see me!
+            f.dispose(); //Destroy the JFrame object 
+      }
+    });
     }
     
 
